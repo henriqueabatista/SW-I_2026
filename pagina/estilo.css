@@ -1,0 +1,364 @@
+
+:root {
+    --eva-purple: #6B21A8;
+    --eva-green: #4ADE80;
+    --eva-orange: #F97316;
+    --eva-dark: #1A1A2E;
+    --eva-darker: #0F0F1A;
+    --eva-light: #E5E7EB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--eva-darker);
+    color: var(--eva-light);
+    min-height: 100vh;
+}
+
+.imglogo{
+    width: 50%;
+}
+
+.navbar-eva {
+    background-color: var(--eva-dark) !important;
+    border-bottom: 2px solid var(--eva-purple);
+    padding: 1rem 0;
+}
+
+.navbar-eva .navbar-brand {
+    color: var(--eva-green) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.navbar-eva .nav-link {
+    color: var(--eva-light) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar-eva .nav-link:hover,
+.navbar-eva .nav-link.active {
+    color: var(--eva-green) !important;
+}
+
+.navbar-eva .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: var(--eva-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-eva .nav-link:hover::after,
+.navbar-eva .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border-color: var(--eva-purple) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%234ADE80' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(15, 15, 26, 0.7), rgba(15, 15, 26, 0.95));
+    z-index: 1;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--eva-green);
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--eva-light);
+    opacity: 0.9;
+}
+
+.section-eva {
+    padding: 5rem 0;
+}
+
+.section-eva.alt {
+    background-color: var(--eva-dark);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--eva-green);
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--eva-purple), var(--eva-green));
+}
+
+.section-description {
+    color: var(--eva-light);
+    opacity: 0.85;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.card-eva {
+    background-color: var(--eva-dark);
+    border: 1px solid var(--eva-purple);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card-eva:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(107, 33, 168, 0.3);
+}
+
+.card-eva .card-img-top {
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--eva-purple);
+}
+
+.card-eva .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-eva .card-title {
+    color: var(--eva-green);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-eva .card-text {
+    color: var(--eva-light);
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.page-header {
+    background-color: var(--eva-dark);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--eva-purple);
+}
+
+.page-header h1 {
+    color: var(--eva-green);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--eva-light);
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.content-box {
+    background-color: var(--eva-dark);
+    border-left: 4px solid var(--eva-purple);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0 12px 12px 0;
+}
+
+.content-box h3 {
+    color: var(--eva-green);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content-box p {
+    color: var(--eva-light);
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+.footer-eva {
+    background-color: var(--eva-dark);
+    border-top: 2px solid var(--eva-purple);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-eva p {
+    color: var(--eva-light);
+    opacity: 0.7;
+    margin: 0;
+}
+
+.footer-eva .eva-text {
+    color: var(--eva-green);
+    font-weight: 600;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 2rem;
+    border-left: 2px solid var(--eva-purple);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background-color: var(--eva-green);
+    border-radius: 50%;
+    border: 2px solid var(--eva-purple);
+}
+
+.timeline-item h4 {
+    color: var(--eva-green);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    color: var(--eva-light);
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+.franchise-item {
+    background-color: var(--eva-dark);
+    border: 1px solid var(--eva-purple);
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.franchise-item:hover {
+    border-color: var(--eva-green);
+    box-shadow: 0 5px 20px rgba(74, 222, 128, 0.2);
+}
+
+.franchise-item h4 {
+    color: var(--eva-green);
+    margin-bottom: 1rem;
+}
+
+.franchise-item p {
+    color: var(--eva-light);
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+.franchise-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .card-eva .card-img-top {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        height: 50vh;
+    }
+
+    .section-eva {
+        padding: 3rem 0;
+    }
+}
