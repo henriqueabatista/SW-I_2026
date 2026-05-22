@@ -4,6 +4,7 @@ $menuItems = [
     ['label' => 'História', 'href' => 'historia.php'],
     ['label' => 'Personagens', 'href' => 'personagens.php'],
     ['label' => 'Franquia', 'href' => 'franquia.php'],
+    ['label' => 'Contato', 'href' => 'contato.php'],
 ];
 
 $paginaAtual = basename($_SERVER['PHP_SELF']);
@@ -11,18 +12,23 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($titulo) ? $titulo . ' - ' : ''; ?>Neon Genesis Evangelion</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <link href="estilo.css" rel="stylesheet">
+</head>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-eva sticky-top">
         <div class="container">
+            <div class="imglogo">
             <a class="navbar-brand" href="index.php">EVANGELION</a>
+                
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,13 +46,15 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
         </div>
     </nav>
 
+
     <main>
-<header class="page-header">
-    <div class="container">
-        <h1>História do Anime</h1>
-        <p>A jornada de Shinji Ikari e a batalha pela humanidade</p>
-    </div>
-</header>
+        <section class="hero-section">
+            <img src="imagens/BANNER.jpg" alt="Neon Genesis Evangelion Banner" class="hero-image">
+            <div class="hero-content">
+                <h1 class="hero-title">História do Anime</h1>
+                <p class="hero-subtitle">A jornada de Shinji Ikari e a batalha pela humanidade</p>
+            </div>
+        </section>
 
 <section class="section-eva">
     <div class="container">
@@ -65,65 +73,63 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                 <div class="timeline-item">
                     <h4>Arco 1: O Chamado</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                        cillum dolore eu fugiat nulla pariatur.
+                        Ao chegar em Tokyo-3 durante o ataque do Terceiro Anjo, Shinji é forçado por seu pai a 
+                        pilotar a unidade Evangelion-01 (EVA-01). Apesar do extremo trauma psicológico e da 
+                        rejeição inicial, ele assume o posto. Neste arco inicial de introdução, Shinji passa a morar 
+                        com a Major Misato Katsuragi, conhece a misteriosa e silenciosa piloto do EVA-00, Rei Ayanami, 
+                        e começa a se adaptar à dolorosa rotina de ser o salvador do que restou do mundo.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <h4>Arco 2: As Batalhas</h4>
                     <p>
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                        deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste 
-                        natus error sit voluptatem accusantium doloremque laudantium, totam rem 
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto 
-                        beatae vitae dicta sunt explicabo.
+                        A dinâmica em Tokyo-3 muda drasticamente com a chegada da extravagante piloto alemã da 
+                        Unidade-02, Asuka Langley Soryu. Este período equilibra momentos de ação intensa e humor 
+                        com táticas de combate sincronizadas para derrotar Anjos cada vez mais complexos. 
+                        No entanto, sob a superfície de trabalho em equipe, a pressão psicológica cresce, e as 
+                        barreiras emocionais dos três pilotos começam a dar os primeiros sinais de desgaste.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <h4>Arco 3: Revelações</h4>
                     <p>
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-                        adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et 
-                        dolore magnam aliquam quaerat voluptatem.
+                        O tom do anime escurece profundamente. O aparecimento de Anjos que atacam diretamente a psique 
+                        dos pilotos desmorona a pouca estabilidade que restava. Asuka entra em uma depressão profunda 
+                        após perder seu sincronismo, o passado sombrio da NERV começa a vir à tona e segredos assustadores 
+                        sobre os clones de Rei Ayanami e a real natureza biológica dos Evangelions são brutalmente expostos.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <h4>Arco 4: A Verdade</h4>
                     <p>
-                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit 
-                        laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure 
-                        reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-                        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                        Isolado e desesperado, Shinji encontra conforto temporário em Kaworu Nagisa, o Quinto Escolhido. 
+                        Contudo, a breve conexão se transforma em tragédia quando Kaworu revela ser o Décimo Sétimo Anjo, 
+                        obrigando Shinji a tomar a decisão mais difícil de sua vida. Os episódios finais da série de TV (25 e 26) 
+                        abandonam o plano físico e mergulham inteiramente em uma sessão de introspecção psicológica, discutindo 
+                        o dilema do porco-espinho e a busca de Shinji por autoaceitação.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <h4>Arco Final: O Fim de Evangelion</h4>
                     <p>
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis 
-                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
-                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui 
-                        officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                        Para dar o fechamento definitivo aos eventos apocalípticos da realidade, o filme *The End of Evangelion* mostra o colapso físico da NERV sob o ataque das forças da SEELE. Gendo Ikari tenta iniciar o Projeto de 
+                        Instrumentalidade Humana, que visa fundir todas as mentes humanas em uma única consciência para extinguir a dor 
+                        da solidão. O destino de toda a existência cai nas mãos do fragilizado Shinji Ikari, que deve escolher entre o 
+                        vazio perfeito da fusão ou a dor inerente de ser um indivíduo livre.
                     </p>
                 </div>
 
                 <div class="content-box mt-5">
                     <h3>Conclusão</h3>
                     <p>
-                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, 
-                        cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod 
-                        maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor 
-                        repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum 
-                        necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae 
-                        non recusandae.
+                        Neon Genesis Evangelion transcende o conceito tradicional de robôs gigantes para se consolidar como um tratado 
+                        sobre a dor de existir, a depressão e a busca por conexões reais em um mundo que machuca. Ao final da jornada, 
+                        a obra de Hideaki Anno nos deixa com a poderosa lição de que, enquanto houver sol, lua e terra, qualquer lugar 
+                        pode se tornar um paraíso se tivermos a vontade de viver e aceitarmos nossa própria identidade.
                     </p>
                 </div>
             </div>
@@ -133,16 +139,16 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 
     </main>
 
+
     <footer class="footer-eva">
         <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> <span class="eva-text">Neon Genesis Evangelion</span> - Fan Site</p>
+            <p>&copy; <?php echo date('Y'); ?> <span class="eva-text">Neon Genesis Evangelion</span> Site de Fã</p>
             <p class="mt-2" style="font-size: 0.9rem;">
-                Todos os direitos reservados à Gainax e Khara Inc.
+              
             </p>
         </div>
-    </footer>
+    </footer >
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

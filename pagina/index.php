@@ -4,6 +4,7 @@ $menuItems = [
     ['label' => 'História', 'href' => 'historia.php'],
     ['label' => 'Personagens', 'href' => 'personagens.php'],
     ['label' => 'Franquia', 'href' => 'franquia.php'],
+    ['label' => 'Contato', 'href' => 'contato.php'],
 ];
 
 $paginaAtual = basename($_SERVER['PHP_SELF']);
@@ -25,9 +26,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
     <nav class="navbar navbar-expand-lg navbar-eva sticky-top">
         <div class="container">
             <div class="imglogo">
-                <a href="index.php">
-                    <img src="imagens/logo.webp" alt="">
-                </a>
+            <a class="navbar-brand" href="index.php">EVANGELION</a>
                 
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

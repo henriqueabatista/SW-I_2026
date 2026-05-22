@@ -1,4 +1,3 @@
-
 :root {
     --eva-purple: #6B21A8;
     --eva-green: #4ADE80;
@@ -326,6 +325,53 @@ body {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
+
+
+.form-control-eva {
+    background-color: var(--eva-darker) !important;
+    border: 1px solid var(--eva-purple) !important;
+    color: var(--eva-light) !important;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control-eva:focus {
+    border-color: var(--eva-green) !important;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.3) !important;
+    outline: none;
+}
+
+.btn-eva {
+    background-color: transparent;
+    border: 2px solid var(--eva-green);
+    color: var(--eva-green);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-eva:hover {
+    background-color: var(--eva-green);
+    color: var(--eva-darker);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
+.contact-info-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-item h5 {
+    color: var(--eva-orange);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+
 
 @media (max-width: 768px) {
     .hero-title {
