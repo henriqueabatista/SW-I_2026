@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Teste de Comandos PHP</title>
 
-    <!-- Ligação com o CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -37,13 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $buscar = $_POST["buscar"];
     $trocar = $_POST["trocar"];
 
-    // LENGTH
     $tamanho = strlen($frase);
 
-    // SPLIT
     $separado = explode(" ", $frase);
 
-    // REPLACE
     $novaFrase = str_replace($buscar, $trocar, $frase);
 
     echo "<div class='resultado'>";
