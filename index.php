@@ -1,70 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Teste de Comandos PHP</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Validador de CPF</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-<div class="container">
 
-    <h2>Split, Replace e Length</h2>
+<form method="POST">
+    <label>Digite seu nome:</label><br>
+    <input type="text" name="nome"><br><br>
 
-    <form method="POST">
+    <label>Digite seu CPF:</label><br>
+    <input type="text" name="cpf"><br><br>
 
-        Digite uma frase:
-        <input type="text" name="frase" required>
+    <button type="submit">Validar</button>
 
-        Palavra para trocar:
-        <input type="text" name="buscar" required>
+    <?php
 
-        Nova palavra:
-        <input type="text" name="trocar" required>
+if(isset($_POST['cpf'])){
 
-        <button type="submit">Enviar</button>
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
 
-    </form>
+    $cpf = preg_replace('/[^0-9]/', '', $cpf);
 
-<?php
+    $digitos = str_split($cpf);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $frase = $_POST["frase"];
-    $buscar = $_POST["buscar"];
-    $trocar = $_POST["trocar"];
+    $soma1 =
+        ($digitos[0] * 10) +
+        ($digitos[1] * 9) +
+        ($digitos[2] * 8) +
+        ($digitos[3] * 7) +
+        ($digitos[4] * 6) +
+        ($digitos[5] * 5) +
+        ($digitos[6] * 4) +
+        ($digitos[7] * 3) +
+        ($digitos[8] * 2);
 
-    $tamanho = strlen($frase);
+    $resto1 = $soma1 % 11;
 
-    $separado = explode(" ", $frase);
+    if($resto1 < 2){
+        $validador1 = 0;
+    }else{
+        $validador1 = 11 - $resto1;
+    }
+    $soma2 =
+        ($digitos[0] * 11) +
+        ($digitos[1] * 10) +
+        ($digitos[2] * 9) +
+        ($digitos[3] * 8) +
+        ($digitos[4] * 7) +
+        ($digitos[5] * 6) +
+        ($digitos[6] * 5) +
+        ($digitos[7] * 4) +
+        ($digitos[8] * 3) +
+        ($digitos[9] * 2);
 
-    $novaFrase = str_replace($buscar, $trocar, $frase);
+    $resto2 = $soma2 % 11;
 
-    echo "<div class='resultado'>";
-
-    echo "<h3>Resultados</h3>";
-
-    echo "Quantidade de caracteres: " . $tamanho . "<br><br>";
-
-    echo "Palavras separadas:<br>";
-
-    foreach ($separado as $palavra) {
-        echo $palavra . "<br>";
+    if($resto2 < 2){
+        $validador2 = 0;
+    }else{
+        $validador2 = 11 - $resto2;
     }
 
-    echo "<br>";
-
-    echo "Frase alterada:<br>";
-    echo $novaFrase;
-
-    echo "</div>";
+    if($validador1 == $digitos[9] && $validador2 == $digitos[10]){
+        echo "<h2>$nome, CPF válido</h2>";
+    }else{
+        echo "<h2>$nome, CPF inválido</h2>";
+    }
 }
 
 ?>
 
-</div>
+</form>
+
+
+
+
 
 </body>
 </html>
