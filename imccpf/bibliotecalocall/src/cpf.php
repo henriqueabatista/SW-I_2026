@@ -1,11 +1,12 @@
 <?php
+class cpf
+{
+    public function ValidarCPF($cpf)
+    {
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
 
-function validarCPF($cpf) {
-
-    $cpf = preg_replace('/[^0-9]/', '', $cpf);
-
-    if (strlen($cpf) != 11) {
-        return false;
+        if (strlen($cpf) != 11) {
+            return false;                                                             
     }
 
     if (preg_match('/(\d)\1{10}/', $cpf)) {
@@ -18,27 +19,40 @@ function validarCPF($cpf) {
         $soma += $cpf[$i] * (10 - $i);
     }
 
-    $resto = ($soma * 10) % 11;
+    $resto = $soma % 11;
 
-    if ($resto == 10) {
-        $resto = 0;
+    if ($resto < 2) {
+        $digito1 = 0;
+    } else {
+        $digito1 = 11 - $resto;
     }
 
-    if ($resto != $cpf[9]) {
+    if ($cpf[9] != $digito1) {
         return false;
     }
 
     $soma = 0;
 
     for ($i = 0; $i < 10; $i++) {
-        $soma += $cpf[$i] * (11 - $i);
+        $soma += $cpf[$i] * (11- $i);
     }
 
-    $resto = ($soma * 10) % 11;
+    $resto = $soma %11;
 
-    if ($resto == 10) {
-        $resto = 0;
+    if ($resto < 2) {
+        $digito2 = 0;
+    } else {
+        $digito2 = 11 - $resto;
     }
 
-    return $resto == $cpf[10];
+    if ($cpf[10] != $digito2) {
+        return false;
+    }
+
+    return true;
+
+    }
+
 }
+
+?>

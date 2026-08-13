@@ -1,10 +1,34 @@
-<?php
-require_once 'bibliotecalocall/autoload.php';
-$imc = new imc();
-$cpf = new cpf();
+<!DOCTYPE html>
+<html lang="pt-br">
 
-echo $imc->calcularimc(60,170);
-echo "<br><br>";
+<head>
+    <meta charset="UTF-8">
+    <title>Calculos PHP</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
 
-echo $cpf->validarCPF(42570520829);
-echo "<br><br>";
+<header class="header">
+<h1>Validador de cpf e calculador de imc</h1>
+</header>
+
+<body>
+
+    <div class="box">
+        <?php
+        require_once 'bibliotecalocall/autoload.php';
+        $imc = new imc();
+        echo "IMC: " . $imc->CalcularIMC(30,1.70);
+        echo "<br><br>";
+
+        $cpf = new cpf();
+
+        if ($cpf->ValidarCPF('487.486.838-09')) {
+            echo "CPF válido";
+        } else {
+            echo "CPF inválido";
+        }
+        ?>
+    </div>
+
+</body>
+</html>
